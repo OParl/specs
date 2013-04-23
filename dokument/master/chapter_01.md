@@ -7,8 +7,14 @@ Dieses Dokument wird bei seiner Fertigstellung die Spezifikation des OParl Schni
 Parlamentarische Informationssysteme
 ------------------------------------
 
-Parlamentarische Informationssysteme (oft Ratsinformationssystem, RIS oder Bürgerinformationssystem genannt) werden von vielen Körperschaften wie Kommunen, Landkreisen und Regierungsbezirken eingesetzt, um die anfallende Gremienarbeit (Ratssitzungen, Ausschüsse, Vertretungen) zu organisieren. Da ein großer Teil der schriftlichen Arbeit in der Lokalpolitik über derartige Systeme verwaltet wird, sind diese Systeme – dort wo vorhanden – ein wichtiger Zugriffspunkt für alle, die sich für politischen Geschehnisse interessieren.
+Parlamentarische Informationssysteme werden von vielen Körperschaften wie Kommunen, Landkreisen und Regierungsbezirken eingesetzt, um die anfallende Gremienarbeit (Ratssitzungen, Ausschüsse, Vertretungen) zu organisieren. Da ein großer Teil der schriftlichen Arbeit in der Lokalpolitik über derartige Systeme verwaltet wird, sind diese Systeme – dort wo vorhanden – ein wichtiger Zugriffspunkt für alle, die sich für politischen Geschehnisse interessieren.
 
+Ein Sitzungsdient bieten verschienden Komponenten:
+* Amtsinformationsystem kurs AIS, steht Mitarbeitern der Verwaltung zur Verfügung
+* Ratsinformationssystem kurz RIS, richtet sich vornehmlich an Kommunalpolitiker
+* Bürgerinformationssystem kurz BIS, veröffentlicht die Daten für die Zivilgeselschaft
+
+Gemäß der Zielgruppen bieten alle Informationssysteme unterschiedliche Sichten auf die Daten. Das Bürgerinformationssystem ist das einzigste was ohne Authentifizierung aus kommt, dennoch müssen auch hier Einstellungen zu den Rechten. Wann darf die Drucksachen von der Öffentlichkeit gesehen werden. Selbst wenn eine Drucksache oder Sitzung öffentlich ist, gibt es für deren Dokumente getrennte Regeln. Der Begriff Ratsinformationssystem wird häufig auch für das Bürgerinformationssystem genutzt, da das System als solches Informationen über die Ratsarbeit veröffentlich.  
 
 Gründe für den standardisierten Datenzugriff
 --------------------------------------------
