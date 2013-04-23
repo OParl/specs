@@ -84,23 +84,22 @@ Das Gremium ist ein Personenkreis, üblicherweise von gewählten und/oder ernann
 ### Eigenschaften ###
 
 Kennung
-:   Zur eindeutigen Identifizierung des Gremiums im Kontext einer bestimmten Gebietskörperschaft. Die Stadt Köln verwendet beispielswiese das Kürzel "STA" für den Stadtentwicklungsausschuss oder "BA" für den Ausschuss für Anregungen und Beschwerden. Andere Kommunen verwenden z.B. rein numerische Kennungen.
+:   Zur eindeutigen Identifizierung des Gremiums im Kontext einer bestimmten Gebietskörperschaft. Viele RIS nutzen rein numerische Kennungen.
 Name
 :   Der Name des Gremiums. Beispiele: "Rat", "Hauptausschuss", "Bezirksvertretung 1 (Innenstadt)"
-
+Kurzform
+:   _Optional_. Kurzform des Gremiums. Die Stadt Köln verwendet beispielswiese das Kürzel "STA" für den Stadtentwicklungsausschuss oder "BA" für den Ausschuss für Anregungen und Beschwerden.
 
 #### Anmerkungen ####
 
-Beim Rösrather RIS [6] wird für jedes Gremium ein Kurz- und ein Langname angegeben. Beispielsweise wird beim "Stadtentwicklungs-, Planungs- und Verkehrsausschuss" die kurze Form "Stadtentwicklung" hinterlegt. Bei 5 von 12 Gremien sind jedoch Kurz- und Langnamen identisch.
+Beim Rösrather RIS [6] wird für jedes Gremium ein Kurz- und ein Langname angegeben. In Köln sind "STA" und "BA" auch Kurzformen und keine Kennungen. Damit schon zwei Kurzformen deswegen optional einführen.
 
-Sofern nicht Beispiele aus weiteren Systemen vorliegen, wird dieser Einzelfall nicht im Entwurf abgebildet.
-
+(*datiert) Gremien werden regelmäßig neu eingeführt und abgelöst?
 
 ### Beziehungen ###
 
 * Objekte vom Typ "Person" referenzieren auf Gremien, um die Mitgliedschaft/Zugehörigkeit einer Person im/zum Gremium zu kennzeichnen.
-* Objekte vom Typ "Drucksache" können einem Gremium zugeordnet sein. Beispielsweise wird eine Anfrage oder ein Antrag dem Rat oder einer bestimmten Bezirksvertretung zugeordnet.
-
+* Objekte vom Typ "Drucksache" können in mehreren Gremium beraten werden.
 
 Person
 ------
@@ -194,7 +193,7 @@ Ende
 
 ### Beziehungen ###
 
-* Sitzungen sind grundsätzlich genau einem Gremium zugeordnet.
+* Sitzungen sind mehreren Gremium zugeordnet.
 * Personen sind Sitzungen zugeordnet, um die Teilnahme an der Sitzung auszudrücken.
 * Dokumente können vom Typ "Sitzung" _optional_ zu mehreren Zwecken referenziert werden:
     * Zum Verweis auf die Einladung zur Sitzung
@@ -231,6 +230,7 @@ Beschlusstext
 ### Beziehungen ###
 
 * Jeder Tagesordnungspunkt gehört zu einer Sitzung.
+* Auf einem Tagesordnungspunkt kann ein Drucksache behandelt werden.
 * Es können mehrere Objekte vom Typ "Stimmabgabe" referenziert werden, um das Abstimmungsverhalten von Fraktionen oder Einzelpersonen zu dokumentieren.
 * Es können Personen referenziert werden, die während der Abstimmung zu diesem Tagesordnungspunkt *nicht* anwesend waren.
 
@@ -288,11 +288,11 @@ Typ
 ### Beziehungen ###
 * Es muss genau ein **Hauptdokument** (Objekttyp "Dokument") referenziert werden.
 * Es können beliebig viele weitere Dokumente referenziert werden, die als nachgeordnete **Anlagen** zur Drucksache verstanden werden.
-* Es kann ein **Gremium** genannt werden, dem die Drucksache zuzuordnen ist. Hier ist zu klären, inwiefern dies für einzelne Typen von Drucksachen verpflichten sein sollte. So sollte beispielsweise eine Anfrage grundsätzlich aus einem Gremium (z.B. Gemeinderat) stammen.
-* Drucksachen können **Urhebern** zugewiesen werden. Im Fall von Mitteilungen der Verwaltung ist dies oft der Oberbürgermeister. Bei Anträgen oder Anfragen können Organisationen oder Einzelpersonen referenziert werden. Es können stets mehrere Ihrheber verknüpft werden.
+* Drucksachen werden in **Gremien** beraten.
+* Drucksachen können **Urhebern** zugewiesen werden. Im Fall von Mitteilungen der Verwaltung ist dies oft der Oberbürgermeister. Bei Anträgen oder Anfragen können Organisationen oder Einzelpersonen referenziert werden. Es können stets mehrere Urheber verknüpft werden.
 * Es können beliebig viele **Orte** (siehe Objekttyp "Ort") referenziert werden, die im Inhalt der Drucksache behandelt werden. Beispiel: Beschlussvorlage zur Freigabe von Mitteln für die Sanierung eines Sportplatzes, wobei der Ort die Lage des Sportplatzes genau beschreibt.
 * Drucksachen können auf andere Drucksachen referenzieren. Diese Verweise können verschiedene semantische Beziehungen ausdrücken. So kann eine Drucksache auf eine übergeordnete oder eine oder mehrere untergeordnete Drucksachen verweisen. Beim Drucksachen-Typ "Beantwortung einer Anfrage" ist die Drucksache zu referenzieren, die die ursprüngliche **Anfrage** beinhaltet. Denkbar sind auch Verweise auf frühere Drucksachen zum selben Thema. Zu klären ist, wie die verschiedenen möglichen Beziehungen formell ausgedrückt werden.
-* Drucksachen können zu beliebig vielen Tagesordnungspunkten in Beziehung stehen, um die **Beratungsfolge** einer Drucksache abzubilden. Hierbei kann die Beziehung jeweils mit einer Rollenbezeichnung versehen sein, die noch näher zu bestimmen ist (TODO).
+* Drucksachen können zu beliebig vielen Tagesordnungspunkten in Beziehung stehen, um die **Beratungsfolge** einer Drucksache abzubilden. Hierbei kann die Beziehung jeweils mit einer Zuständigkeit versehen sein, die noch näher zu bestimmen ist (TODO).
 
 
 Dokument
