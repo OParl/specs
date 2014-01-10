@@ -177,7 +177,7 @@ Informationssystems und für den jeweiligen Objekttyp. Das bedeutet: zwei
 von einander unabhängige Ratsinformationssysteme für verschiedene
 Körperschaften dürfen sich überlappende Schlüssel nutzen. Innerhalb
 eines Systems dürfen zwei Objekte unterschiedlichen Typs (beispielsweise
-eine Person ud ein Gremium) den selben Schlüssel nutzen. Jedoch MÜSSEN
+eine Person und ein Gremium) den selben Schlüssel nutzen. Jedoch MÜSSEN
 zwei Objekte des selben Typs innerhalb des selben Systems grundsätzlich
 verschiedene Schlüssel haben.
 
