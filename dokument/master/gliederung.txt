@@ -9,7 +9,17 @@ OParl Spezifikation 1.0 Gliederung
 Einleitung
     Kurzer Text über OParl und seinen Anwendungsbereich
     Zielsetzung von OParl
+        - Nutzen für Kommunen, Bürger, politische Parteien
+        - Nutzen für Anbieter von RIS-Pflegesoftware
+        - Nutzen für Anbieter von RIS-Darstellungssoftware
+        - Nutzen für Open Data Initiativen
+        - Nutzen für die Wissenschaft
+        - Linked Data erwähnen
     Werdegang von OParl 1.0
+    Zukunft von OParl
+        - Verfeinerung, Lücken schliessen
+        - Globalisierung
+        - Erweiterung über die kommunale Ebene hinaus (Land, Bund)
     Nomenklatur der Spezifikation und Satzkonventionen
         - MUSS, SOLL, KANN
         - Hervorhebung englischsprachiger Begriffe
@@ -55,7 +65,7 @@ Prinzipien und Funktionen der API
             - Anonyme Objekte (Blank Nodes)
             - Mime Type application/ld+json
         JSONP
-            - JSONP: RFC finden/verlinken. (TODO!)
+            - JSONP: Spezifikation finden/verlinken. (TODO! RFC gibt es nicht)
     Benannte Objekte
         - IRIs (RFC3987) als eindeutige Kennung
     Anonyme Objekte (Blank Nodes)
