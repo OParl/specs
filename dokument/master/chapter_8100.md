@@ -73,7 +73,7 @@ Kennungen der Drucksachen zum Einsatz.
 `publishedDate`
 :   Veröffentlichungsdatum der Drucksache.
     Typ: `xsd:dateTime` oder `xsd:date`.
-    Kardinalität: 0 bis 1.
+    Kardinalität: 1.
     ZWINGEND.
 
 `paperType`
