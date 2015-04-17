@@ -48,6 +48,12 @@ abgebildet.
 
 ### Eigenschaften ###
 
+`name`
+:   Name der Sitzung.
+    Typ: Datentyp String.
+    Kardinalität: 1.
+    ZWINGEND.
+
 `start`
 :   Datum und Uhrzeit des Anfangszeitpunkts der Sitzung. Bei einer zukünftigen 
     Sitzung ist dies der geplante Zeitpunkt, bei einer stattgefundenen
