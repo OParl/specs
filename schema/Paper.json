@@ -79,7 +79,7 @@
             "type": "string",
             "format": "uri"
         },
-        "File": {
+        "file": {
             "description": "Alle Dateien zur Drucksache ausgenommen der ggf. in mainFile angegebenen Datei.",
             "oparl:ref": "File",
             "oparl:backref": "paper",
