@@ -72,15 +72,15 @@
             }            
         },
         "mainFile": {
-            "description": "Die Haupt-Datei zu dieser Drucksache. Beispiel: Die Drucksache repräsentiert eine Beschlussvorlage und die Haupt-Datei enthält den Text der Beschlussvorlage.",
+            "description": "Die Haupt-Datei zu dieser Drucksache. Beispiel: Die Drucksache repräsentiert eine Beschlussvorlage und die Haupt-Datei enthält den Text der Beschlussvorlage. Sollte keine eindeutige Haupt-Datei vorhanden sein, wird diese Eigenschaft nicht ausgegeben.",
             "oparl:ref": "File",
             "oparl:backref": "paper",
             "oparl:cardinality": "n:1",
             "type": "string",
             "format": "uri"
         },
-        "auxiliaryFile": {
-            "description": "Anhänge zur Drucksache. Diese sind, in Abgrenzung zur Haupt-Datei (`mainFile`), untergeordnet und es kann beliebig viele davon geben.",
+        "File": {
+            "description": "Alle Dateien zur Drucksache ausgenommen der ggf. in mainFile angegebenen Datei.",
             "oparl:ref": "File",
             "oparl:backref": "paper",
             "oparl:cardinality": "n:m",
