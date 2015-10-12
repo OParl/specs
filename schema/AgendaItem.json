@@ -58,7 +58,7 @@
             "oparl:cardinality": "1:1",
             "type": "string"
         },
-        "auxiliaryFile": {
+        "file": {
             "description": "Dateianhänge zum Tagesordnungspunkt.",
             "oparl:ref": "File",
             "oparl:cardinality": "n:m",

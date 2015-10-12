@@ -10,7 +10,7 @@
         "https://oparl.example.org/paper/699"
     ],
     "mainFile": "https://oparl.example.org/files/925",
-    "auxiliaryFile": [
+    "file": [
         "https://oparl.example.org/files/926"
     ],
     "location": [
@@ -29,4 +29,3 @@
     ],
     "modified": "2013-01-08T12:05:27+01:00"
 }
-

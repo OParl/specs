@@ -16,7 +16,7 @@
     ],
     "resultsProtocol": "https://oparl.example.org/files/628",
     "verbatimProtocol": "https://oparl.example.org/files/691",
-    "auxiliaryFile": [
+    "file": [
         "https://oparl.example.org/files/588",
         "https://oparl.example.org/files/589"
     ],
