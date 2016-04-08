@@ -1,0 +1,61 @@
+---
+  title: "System"
+  description: "Ein `System`-Objekt repräsentiert eine OParl-Schnittstelle für eine bestimmte OParl-Version. Es ist außerdem der Startpunkt für Clients beim Zugriff auf einen Server.\n\nMöchte ein Server mehrere zueinander inkompatible OParl-Versionen unterstützen, dann **muss** der Server für jede Version eine eigenen OParl-Schnittstelle mit einem eigenen `System`-Objekt ausgeben."
+  type: "object"
+  required: 
+    - "id"
+    - "type"
+    - "oparlVersion"
+    - "body"
+  properties: 
+    id: 
+      type: "string"
+      format: "url"
+    type: 
+      type: "string"
+      pattern: "^https://oparl\\.org/schema/1\\.0/System$"
+    oparlVersion: 
+      type: "string"
+      pattern: "^https://oparl\\.org/specs/1\\.0/$"
+      description: "Die URL der OParl-Spezifikation, die von diesem Server unterstützt wird. Aktuell kommt hier nur ein Wert in Frage. Mit zukünftigen OParl-Versionen kommen weitere mögliche URLs hinzu. Wert: `https://oparl.org/specs/1.0/`"
+    otherOparlVersions: 
+      description: "Dient der Angabe von System-Objekten mit anderen OParl-Versionen."
+      oparl:ref: "System"
+      items: 
+        type: "string"
+        format: "url"
+      type: "array"
+    body: 
+      description: "Link zur [Objektliste](#objektlisten) mit allen Körperschaften, die auf dem System existieren."
+      type: "string"
+      format: "url"
+    name: 
+      description: "Nutzerfreundlicher Name für das System, mit dessen Hilfe Nutzerinnen und Nutzer das System erkennen und von anderen unterscheiden können."
+      type: "string"
+    contactEmail: 
+      description: "E-Mail-Adresse für Anfragen zur OParl-API. Die Angabe einer E-Mail-Adresse dient sowohl NutzerInnen wie auch Entwicklerinnen von Clients zur Kontaktaufnahme mit dem Betreiber."
+      type: "string"
+    contactName: 
+      description: "Name der Ansprechpartnerin bzw. des Ansprechpartners oder der Abteilung, die über die in `contactEmail` angegebene Adresse erreicht werden kann."
+      type: "string"
+    website: 
+      description: "URL der Website des parlamentarischen Informationssystems"
+      type: "string"
+      format: "url"
+    vendor: 
+      description: "URL der Website des Software-Anbieters, von dem die OParl-Server-Software stammt."
+      type: "string"
+      format: "url"
+    product: 
+      description: "URL zu Informationen über die auf dem System genutzte OParl-Server-Software"
+      type: "string"
+      format: "url"
+    created: 
+      type: "string"
+      format: "date-time"
+    modified: 
+      type: "string"
+      format: "date-time"
+    deleted: 
+      type: "boolean"
+

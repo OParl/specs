@@ -1,0 +1,137 @@
+---
+  title: "Person"
+  description: "Jede natürliche Person, die in der parlamentarischen Arbeit tätig und insbesondere Mitglied in einer Gruppierung ([oparl:Organization](#oparl_organization)) ist, wird mit einem Objekt vom Typ `oparl:Person` abgebildet."
+  type: "object"
+  required: 
+    - "id"
+    - "type"
+  properties: 
+    id: 
+      type: "string"
+      format: "url"
+    type: 
+      type: "string"
+      pattern: "^https://oparl\\.org/schema/1\\.0/Person$"
+    body: 
+      description: "Körperschaft, zu der die Person gehört."
+      oparl:ref: "Body"
+      oparl:backref: "person"
+      oparl:cardinality: "n:1"
+      type: "string"
+      format: "url"
+    name: 
+      description: "Der vollständige Name der Person mit akademischem Grad und dem gebräuchlichen Vornamen, wie er zur Anzeige durch den Client genutzt werden kann."
+      type: "string"
+    familyName: 
+      description: "Familienname bzw. Nachname."
+      type: "string"
+    givenName: 
+      description: "Vorname bzw. Taufname."
+      type: "string"
+    formOfAddress: 
+      description: "Anrede."
+      type: "string"
+    affix: 
+      description: "Namenszusatz (z.B. `jun.` oder `MdL.`)"
+      type: "string"
+    title: 
+      description: "Akademische Titel"
+      items: 
+        type: "string"
+      type: "array"
+    gender: 
+      description: "Geschlecht. Empfohlene Werte sind `female`, `male` und `other`. Für den Fall, dass das Geschlecht der Person unbekannt ist, **sollte** die Eigenschaft nicht ausgegeben werden."
+      type: "string"
+    phone: 
+      description: "Telefonnummern der Person."
+      items: 
+        type: "string"
+      type: "array"
+    email: 
+      description: "E-Mail-Adressen der Person."
+      items: 
+        type: "string"
+      type: "array"
+    location: 
+      description: "Referenz der Kontakt-Anschrift der Person."
+      oparl:ref: "Location"
+      oparl:backref: "person"
+      oparl:cardinality: "n:1"
+      type: "string"
+      format: "url"
+    status: 
+      description: "Status, d.h. Rollen in der Kommune."
+      items: 
+        type: "string"
+      type: "array"
+    membership: 
+      description: "Mitgliedschaften der Person in Gruppierungen, z. B. Gremien und Fraktionen. Es **sollen** sowohl aktuelle als auch vergangene Mitgliedschaften angegeben werden"
+      type: "array"
+      items: 
+        title: "Membership"
+        description: "Über Objekte diesen Typs wird die Mitgliedschaft von Personen in Gruppierungen dargestellt. Diese Mitgliedschaften können zeitlich begrenzt sein. Zudem kann abgebildet werden, dass eine Person eine bestimmte Rolle bzw. Position innerhalb der Gruppierung inne hat, beispielsweise den Vorsitz einer Fraktion."
+        type: "object"
+        required: 
+          - "id"
+          - "type"
+        properties: 
+          id: 
+            type: "string"
+            format: "url"
+          type: 
+            type: "string"
+            pattern: "^https://oparl\\.org/schema/1\\.0/Membership"
+          person: 
+            type: "string"
+            format: "url"
+            description: "Rückreferenz auf Person, welches nur dann ausgegeben wird, wenn das Membership-Objekt einzeln abgerufen ist, d.h. nicht Teil einer internen Ausgabe ist."
+            oparl:ref: "Person"
+          organization: 
+            description: "Die Gruppierung, in der die Person Mitglied ist oder war."
+            oparl:ref: "Organization"
+            oparl:cardinality: "n:1"
+            type: "string"
+            format: "url"
+          role: 
+            description: "Rolle der Person für die Gruppierung. Kann genutzt werden, um verschiedene Arten von Mitgliedschaften zum Beispiel in Gremien zu unterscheiden."
+            type: "string"
+          votingRight: 
+            description: "Gibt an, ob die Person in der Gruppierung stimmberechtigtes Mitglied ist."
+            type: "boolean"
+          startDate: 
+            description: "Anfangszeitpunkt der Mitgliedschaft.^[Abgeleitet von: `schema:validFrom` in Popolo. <https://popoloproject.com/specs/membership.html>]"
+            type: "string"
+            format: "date-time"
+          endDate: 
+            description: "Der Endzeitpunkt der Mitgliedschaft.^[Abgeleitet von: `schema:validThrough` in Popolo. <https://popoloproject.com/specs/membership.html>]"
+            type: "string"
+            format: "date-time"
+          onBehalfOf: 
+            description: "Die Gruppierung, für die die Person in der unter organization angegebenen Organisation sitzt. Beispiel: Mitgliedschaft als Vertreter einer Ratsfraktion, einer Gruppierung oder einer externen Organisation."
+            oparl:ref: "Organization"
+            oparl:cardinality: "n:1"
+            type: "string"
+            format: "url"
+          keyword: 
+            type: "array"
+            items: 
+              type: "string"
+    life: 
+      description: "Kurzer Informationstext zur Person. Eine Länge von weniger als 300 Zeichen ist **empfohlen**"
+      type: "string"
+    lifeSource: 
+      description: "Angabe der Quelle, aus der die Informationen für `life` stammen. Bei Angabe von `life` ist diese Eigenschaft **empfohlen**"
+      type: "string"
+    keyword: 
+      type: "array"
+      items: 
+        type: "string"
+    created: 
+      type: "string"
+      format: "date-time"
+    modified: 
+      type: "string"
+      format: "date-time"
+    deleted: 
+      type: "boolean"
+

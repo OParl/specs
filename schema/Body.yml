@@ -1,0 +1,147 @@
+---
+  title: "Body"
+  description: "Der Objekttyp oparl:Body dient dazu, eine Körperschaft zu repräsentieren. Eine Körperschaft ist in den meisten Fällen eine Gemeinde, eine Stadt oder ein Landkreis.\n\nIn der Regel sind auf einem OParl-Server Daten von genau einer Körperschaft gespeichert und es wird daher auch nur ein Body-Objekt ausgegeben. Sind auf dem Server jedoch Daten von mehreren Körperschaften gespeichert, **muss** für jede Körperschaft ein eigenes Body-Objekt ausgegeben werden."
+  type: "object"
+  required:
+    - "id"
+    - "type"
+    - "name"
+    - "organization"
+    - "person"
+    - "meeting"
+    - "paper"
+    - "legislativeTerm"
+  properties:
+    id:
+      type: "string"
+      format: "url"
+    type:
+      type: "string"
+      pattern: "^https://oparl\\.org/schema/1\\.0/Body$"
+    system:
+      description: "System, zu dem dieses Objekt gehört."
+      oparl:ref: "System"
+      oparl:backref: "bodies"
+      oparl:cardinality: "n:1"
+      type: "string"
+      format: "url"
+    shortName:
+      description: "Kurzer Name der Körperschaft."
+      type: "string"
+    name:
+      description: "Der offizielle lange Name der Körperschaft."
+      type: "string"
+    website:
+      description: "Allgemeine Website der Körperschaft."
+      type: "string"
+      format: "url"
+    license:
+      description: "Lizenz, die für die Daten, die über diese API abgerufen werden können, gilt, sofern nicht am einzelnen Objekt anders angegeben. Siehe dazu auch die übergreifende Beschreibung zur Eigenschaft [`license`](#eigenschaft_license)."
+      type: "string"
+      format: "url"
+    licenseValidSince:
+      description: "Zeitpunkt, seit dem die unter `license` angegebene Lizenz gilt. Vorsicht bei Änderungen der Lizenz die zu restriktiveren Bedingungen führen."
+      type: "string"
+      format: "date-time"
+    oparlSince:
+      description: "Zeitpunkt, ab dem OParl für dieses Body bereitgestellt wurde. Dies hilft, um die Datenvalidität einzuschätzen, erst ab der Einrichtung für OParl kann sichergestellt werden, dass sämtliche Werte korrekt in der Original-Quelle vorliegen."
+      type: "string"
+      format: "date-time"
+    ags:
+      description: "Der achtstellige Amtliche Gemeindeschlüssel^[Amtliche Gemeindeschlüssel können im [Gemeindeverzeichnis (GV-ISys) des Statistischen Bundesamtes](https://www.destatis.de/DE/ZahlenFakten/LaenderRegionen/Regionales/Gemeindeverzeichnis/Gemeindeverzeichnis.html) eingesehen werden]."
+      type: "string"
+    rgs:
+      description: "Der zwölfstellige Regionalschlüssel. Der Regionalschlüssel wird in Zukunft voraussichtlich den Amtlichen Gemeindeschlüssel ersetzen."
+      type: "string"
+    equivalent:
+      description: "Dient der Angabe zusätzlicher URLs, die dieselbe Körperschaft repräsentieren. Hier können beispielsweise der entsprechende Eintrag der Gemeinsamen Normdatei der Deutschen Nationalbibliothek^[Gemeinsame Normdatei <http://www.dnb.de/gnd>] oder der DBPedia^[DBPedia <http://www.dbpedia.org/>] oder der Wikipedia^[Wikipedia <http://de.wikipedia.org/>] angegeben werden. Body- oder System-Objekte mit anderen OParl-Versionen **dürfen nicht** Teil der Liste sein."
+      type: "array"
+      items:
+        type: "string"
+    contactEmail:
+      description: "Dient der Angabe einer Kontakt-E-Mail-Adresse. Die Adresse soll die Kontaktaufnahme zu einer für die Körperschaft und idealerweise das parlamentarische Informationssystem zuständigen Stelle ermöglichen. "
+      type: "string"
+    contactName:
+      description: "Name oder Bezeichnung der mit `contactEmail` erreichbaren Stelle."
+      type: "string"
+    organization:
+      description: "Link zur [Objektliste](#objektlisten) mit allen Gruppierungen der Körperschaft."
+      type: "string"
+      format: "url"
+    person:
+      description: "Link zur [Objektliste](#objektlisten) mit allen Personen der Körperschaft."
+      type: "string"
+      format: "url"
+    meeting:
+      description: "Link zur [Objektliste](#objektlisten) mit allen Sitzungen der Körperschaft."
+      type: "string"
+      format: "url"
+    paper:
+      description: "Link zur [Objektliste](#objektlisten) mit allen Drucksachen der Körperschaft."
+      type: "string"
+      format: "url"
+    legislativeTerm:
+      description: "[Objektliste](#objektlisten) mit allen Wahlperioden der Körperschaft in dem Zeitraum, für den OParl bereitgestellt wird."
+      type: "array"
+      items:
+        title: "LegislativeTerm"
+        description: "Dieser Objekttyp dient der Beschreibung einer Wahlperiode."
+        type: "object"
+        required:
+          - "id"
+          - "type"
+        properties:
+          id:
+            type: "string"
+            format: "url"
+          type:
+            type: "string"
+            pattern: "^https://oparl\\.org/schema/1\\.0/LegislativeTerm"
+          body:
+            type: "string"
+            format: "url"
+            description: "Rückreferenz auf die Körperschaft, welche nur dann ausgegeben wird, wenn das LegislativeTerm-Objekt einzeln abgerufen ist, d.h. nicht Teil einer internen Ausgabe ist."
+            oparl:ref: "Body"
+          name:
+            description: "Nutzerfreundliche Bezeichnung der Wahlperiode."
+            type: "string"
+          startDate:
+            description: "Der erste Tag der Wahlperiode."
+            type: "string"
+            format: "date-time"
+          endDate:
+            description: "Der letzte Tag der Wahlperiode."
+            type: "string"
+            format: "date-time"
+          keyword:
+            type: "array"
+            items:
+              type: "string"
+    classification:
+      description: "Art der Körperschaft."
+      type: "string"
+    streetAddress:
+      description: "Straße und Hausnummer der Körperschaft."
+      type: "string"
+    postalCode:
+      description: "Postleitzahl der Körperschaft."
+      type: "string"
+    locality:
+      description: "Ortsangabe der Körperschaft."
+      type: "string"
+    location:
+      description: "Ort, an dem die Körperschaft beheimatet ist. Wenn möglich die Stadtgrenzen, ansonsten die Stadtmitte. (Die Ortsangabe kann sowohl über diese Eigenschaft, als auch über die vorangegangenen Einzeleigenschaften erfolgen, sollte aber übereinstimmen, falls beide Ausgabeoptionen genutzt werden."
+      type: "object"
+      $ref: "Location.json"
+    keyword:
+      type: "array"
+      items:
+        type: "string"
+    created:
+      type: "string"
+      format: "date-time"
+    modified:
+      type: "string"
+      format: "date-time"
+    deleted:
+      type: "boolean"
