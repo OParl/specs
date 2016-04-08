@@ -35,8 +35,6 @@ GS_IMAGES=$(PDF_IMAGES:.pdf=.png)
 SVG_IMAGES=$(wildcard $(IMG_DIR)/*.svg)
 MAGICK_IMAGES=$(SVG_IMAGES:.svg=.png)
 
-SCHEMA_JSON=$(wildcard $(SHM_DIR)/*.json)
-
 .PHONY: all clean test live html pdf odt txt epub
 
 all: html pdf odt docx txt epub
@@ -52,7 +50,7 @@ $(IMG_DIR)/%.png: $(IMG_DIR)/%.svg
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
 
-$(SCHEMA_MD): $(SHM_DIR)/*.json $(EXP_DIR)/*.json scripts/json_schema2markdown.py
+$(SCHEMA_MD): $(SHM_DIR)/*.yml $(EXP_DIR)/*.json scripts/json_schema2markdown.py
 	python scripts/json_schema2markdown.py $(SHM_DIR) $(EXP_DIR) > $(SCHEMA_MD)
 
 # main targets

@@ -9,6 +9,7 @@ before_install:
 - sudo dpkg -i pandoc-1.15.1-1-amd64.deb
 - sudo apt-get update -qq
 - sudo apt-get install -y lacheck php5
+- sudo pip install pyyaml
 - curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 install:
