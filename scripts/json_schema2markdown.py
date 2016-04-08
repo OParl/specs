@@ -150,10 +150,10 @@ def json_examples_to_md(name):
 
 for obj in objects:
     filepath = os.path.join(args.schema_folder, obj + ".yml")
-    #try:
-    schema = schema_to_md_table(yaml.load(codecs.open(filepath, encoding='utf-8')))
-    #except:
-    #    sys.stderr.write(filepath + " errored\n")
-    #    exit(1)
+    try:
+        schema = schema_to_md_table(yaml.load(codecs.open(filepath, encoding='utf-8')))
+    except:
+        sys.stderr.write(filepath + " errored\n")
+        exit(1)
 
     print schema
