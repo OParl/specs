@@ -1,3 +1,3 @@
-# Einleitung {#einleitung}
+# Introduction {#einleitung}
 
-Dieses Dokument enthält die Spezifikation des OParl Schnittstellen-Standards für parlamentarische Informationssysteme^[In Deutschland hat sich auf kommunaler Ebene der Begriff "Ratsinformationssystem" etabliert. OParl ist jedoch nicht auf Gemeinderäte beschränkt und verwendet daher den Begriff "parlamentarisches Informationssystem".]. Es dient damit als Grundlage für die Implementierung von OParl-konformen Server- und Clientanwendungen.
+This document contains the specification of the OParl interface standard for parliamentary information systems ^ [in Germany the term "Ratsinformationssystem" is established at the municipal level. However, OParl is not limited to municipal councils and therefore the term "parliamentary information system" is being used. Es dient damit als Grundlage für die Implementierung von OParl-konformen Server- und Clientanwendungen.
