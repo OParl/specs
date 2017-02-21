@@ -1,11 +1,8 @@
 # Schema {#schema}
 
-Dieses Kapitel beschreibt das Schema von OParl. Das Schema definiert
-die Objekttypen und ihre Eigenschaften. Darüber hinaus ist im Schema
-auch festgelegt, in welcher Beziehung verschiedene Objekttypen zu
-einander stehen.
+Dieses Kapitel beschreibt das Schema von OParl. Das Schema definiert die Objekttypen und ihre Eigenschaften. Darüber hinaus ist im Schema auch festgelegt, in welcher Beziehung verschiedene Objekttypen zu einander stehen.
 
-![OParl Objekttypen: Ein Überblick. Die Zahl an den Verbindungslinien entspricht der Anzahl der Attribute, die eine oder mehrere Verknüpfungen herstellen.](en/assets/objekttypen_graph.png)
+![OParl Objekttypen: Ein Überblick. Die Zahl an den Verbindungslinien entspricht der Anzahl der Attribute, die eine oder mehrere Verknüpfungen herstellen.](de/assets/objekttypen_graph.png)
 
 ## Die Objekte {#objekttypen}
 
@@ -33,15 +30,11 @@ Einige Objekte werden intern in anderen Objekten ausgegeben:
 * oparl:File wird intern in oparl:Meeting, oparl:AgendaItem und oparl:Paper ausgegeben
 * oparl:Location wird intern in oparl:Body, oparl:Organization, oparl:Meeting und oparl:Paper ausgegeben
 
-Grundsätzlich muss jedes Objekt unter seiner ID abrufbar sein - auch dann, wenn
-das Objekt in anderen Objekten intern ausgegeben wird. Bei der internen Ausgabe
-wird beim internen Objekt auf die Rückreferenz auf das Elternobjekt verzichtet.
+Grundsätzlich muss jedes Objekt unter seiner ID abrufbar sein - auch dann, wenn das Objekt in anderen Objekten intern ausgegeben wird. Bei der internen Ausgabe wird beim internen Objekt auf die Rückreferenz auf das Elternobjekt verzichtet.
 
-Als Beispiel hier eine Ausgabe von `oparl:Meeting`, in welchem ein `oparl:File` enthalten
-ist:
+Als Beispiel hier eine Ausgabe von `oparl:Meeting`, in welchem ein `oparl:File` enthalten ist:
 
-~~~~~  {#objekte_example1 .json}
-{
+<pre><code id="objekte_example1" class="json">{
     "id": "https://oparl.example.org/meeting/281",
     "type": "https://schema.oparl.org/1.1/Meeting",
     "name": "4. Sitzung des Finanzausschusses",
@@ -61,13 +54,11 @@ ist:
     }
     [...]
 }
-~~~~~
+</code></pre>
 
-Das enthaltene `oparl:File` muss auch einzeln abgerufen werden können. Dabei kommt
-dann das Eltern-Objekt als zusätzliches Attribut hinzu.:
+Das enthaltene `oparl:File` muss auch einzeln abgerufen werden können. Dabei kommt dann das Eltern-Objekt als zusätzliches Attribut hinzu.:
 
-~~~~~  {#objekte_example2 .json}
-{
+<pre><code id="objekte_example2" class="json">{
     "id": "https://oparl.example.org/files/57739",
     "type": "https://schema.oparl.org/1.1/File",
     "name": "Einladung",
@@ -83,14 +74,11 @@ dann das Eltern-Objekt als zusätzliches Attribut hinzu.:
         "https://oparl.example.org/meeting/281"
     ]
 }
-~~~~~
+</code></pre>
 
-Das zusätzliche Attribut ist ein Array, da es auch möglich ist, dass Dateien
-von mehreren Hauptobjekten aus genutzt werden. Das kann z.B. bei `oparl:Location`
-vorkommen:
+Das zusätzliche Attribut ist ein Array, da es auch möglich ist, dass Dateien von mehreren Hauptobjekten aus genutzt werden. Das kann z.B. bei `oparl:Location` vorkommen:
 
-~~~~~  {#objekte_example2 .json}
-{
+<pre><code id="objekte_example2" class="json">{
     "id": "https://oparl.example.org/locations/29856",
     "type": "https://schema.oparl.org/1.1/File",
     "description": "Honschaftsstraße 312, Köln",
@@ -115,31 +103,21 @@ vorkommen:
         "https://oparl.example.org/paper/1077"
     ]
 }
-~~~~~
-
+</code></pre>
 
 ## Übergreifende Aspekte {#uebergreifende-aspekte}
 
 ### Vollständigkeit {#schema-vollstaendigkeit}
 
-Alle regulär öffentlich abrufbaren Informationen **sollten** auch in OParl
-ausgegeben werden, solange dies nicht den Datenschutzbestimmungen widerspricht.
-Daher sind sämtliche Felder im Schema als **empfohlen** zu behandeln, wenn
-nicht explizit etwas anderes angegeben wurde.
+Alle regulär öffentlich abrufbaren Informationen **sollten** auch in OParl ausgegeben werden, solange dies nicht den Datenschutzbestimmungen widerspricht. Daher sind sämtliche Felder im Schema als **empfohlen** zu behandeln, wenn nicht explizit etwas anderes angegeben wurde.
 
 ### Herstellerspezifische Erweiterungen {#herstellerspezifische-erweiterungen}
 
-In OParl können zusätzliche, herstellerspezifische Eigenschaften hinzugefügt werden.
-Dazu wird diesen Eigenschaften ein Herstellerprefix vorangestellt. So könnte man z.B.
-`oparl:Person` um eine Faxnummer erweitern:
+In OParl können zusätzliche, herstellerspezifische Eigenschaften hinzugefügt werden. Dazu wird diesen Eigenschaften ein Herstellerprefix vorangestellt. So könnte man z.B. `oparl:Person` um eine Faxnummer erweitern:
 
-~~~~~
-"BeispielHersteller:faxNumber": "012345678",
-~~~~~
+    "BeispielHersteller:faxNumber": "012345678",
+    
 
 ### URL-Pfade in den Beispielen {#url-pfade-in-den-beispielen}
 
-OParl-Clients wissen nichts vom Aufbau von Pfaden innerhalb von URLs,
-müssen dies nicht wissen, und es gibt deshalb in der OParl-Spezifikation
-keine Festlegungen dazu. Die in den Beispielen verwendeten URLs zeigen einen
-möglichen Weg zur Umsetzungen der Empfehlungen in URLs.
+OParl-Clients wissen nichts vom Aufbau von Pfaden innerhalb von URLs, müssen dies nicht wissen, und es gibt deshalb in der OParl-Spezifikation keine Festlegungen dazu. Die in den Beispielen verwendeten URLs zeigen einen möglichen Weg zur Umsetzungen der Empfehlungen in URLs.
