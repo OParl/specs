@@ -121,6 +121,16 @@
                 "format": "url"
             }
         },
+        "responsibleOrganization": {
+            "description": "Organisationen, die für die Bearbeitung der Drucksache zuständig sind",
+            "oparl:ref": "Organization",
+            "oparl:cardinality": "n:m",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            }
+        },
         "consultation": {
             "description": "Beratungen der Drucksache.",
             "type": "array",
