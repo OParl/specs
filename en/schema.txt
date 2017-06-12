@@ -16,14 +16,14 @@ Person.properties.name.Description: The full name of the Person including post-n
 Person.properties.familyName.description: the Person's surname.  
 Person.properties.givenName.description: the Person's forename.  
 Person.properties.formOfAddress.description: the Person's salutation.
-Person.properties.affix.Description: Prefix (e.g. `jun.` oder `MdL.`)
+Person.properties.affix.Description: Suffix (e.g. `Jun` or `MdL.`)
 Person.properties.title.Description: Academic title
-Person.properties.gender.description: Geschlecht. Empfohlene Werte sind `female`, `male` und `other`. Für den Fall, dass das Geschlecht der Person unbekannt ist, **sollte** die Eigenschaft nicht ausgegeben werden.
-Person.properties.phone.description: Telefonnummern der Person.
-Person.properties.email.description: E-Mail-Adressen der Person.
-Person.properties.location.description: Referenz der Kontakt-Anschrift der Person.
-Person.properties.status.description: Status, d.h. Rollen in der Kommune.
-Person.properties.membership.description: Mitgliedschaften der Person in Gruppierungen, z. B. Gremien und Fraktionen. Es **sollen** sowohl aktuelle als auch vergangene Mitgliedschaften angegeben werden
+Person.properties.gender.Description: Gender. Recommended values are `female`, `male` and `other`. In the event that the sex of the person is unknown, the property **should** not be issued.
+Person.properties.phone.Description: Telephone numbers of the Person.
+Person.properties.email.Description: E-Mail address of the Person.
+Person.properties.location.Description: Reference to the contact address of the Person.
+Person.properties.status.Description: Status, i.e. roles in the Municipality.
+Person.properties.membership.Description: Membership of the person in groupings, e.g. committees and political groups. Es **sollen** sowohl aktuelle als auch vergangene Mitgliedschaften angegeben werden
 Person.properties.life.description: Kurzer Informationstext zur Person. Eine Länge von weniger als 300 Zeichen ist **empfohlen**
 Person.properties.lifeSource.description: Angabe der Quelle, aus der die Informationen für `life` stammen. Bei Angabe von `life` ist diese Eigenschaft **empfohlen**
 File.description: Ein Objekt vom Typ `oparl:File` repräsentiert eine Datei, beispielsweise eine PDF-Datei, ein RTF- oder ODF-Dokument, und hält Metadaten zu der Datei sowie URLs zum Zugriff auf  die Datei bereit.\n\nObjekte vom Typ `oparl:File` können unter anderem mit Drucksachen (`oparl:Paper`) oder Sitzungen (`oparl:Meeting`) in Beziehung stehen. Dies wird durch  die Eigenschaft `paper` bzw. `meeting` angezeigt.\n\nMehrere Objekte vom Typ `oparl:File` können mit einander in direkter Beziehung stehen, z.B. wenn sie den selben Inhalt in unterschiedlichen technischen Formaten wiedergeben. Hierfür werden die Eigenschaften `masterFile` bzw. `derivativeFile` eingesetzt. Das sgezeigte Beispiel-Objekt repräsentiert eine PDF-Datei (zu erkennen an der Eigenschaft `mimeType`) und zeigt außerdem über die Eigenschaft  `masterFile` an, von welcher anderen Datei es abgeleitet wurde. Umgekehrt **kann** über die Eigenschaft `derivativeFile` angezeigt werden, welche Ableitungen einer Datei existieren.
