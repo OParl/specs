@@ -8,10 +8,10 @@ AgendaItem.properties.result.description: A category describing the meeting's ou
 AgendaItem.properties.resolutionText.description: If a decision was taken in this AgendaItem, a text description can be specified here. This is especially relevant in cases where the decision ( e.g.  through amendment) deviates from the drafted resolution.
 AgendaItem.properties.resolutionFile.description: If a decision was taken in this AgendaItem, a file can be specified here. This is especially relevant in cases where the decision ( e.g.  through amendment) deviates from the drafted resolution.
 AgendaItem.properties.auxiliaryFile.description: More files attached to the AgendaItem.
-AgendaItem.properties.start.description: The date and time of the start of the AgendaItem. For AgendaItem in the future, this is the scheduled time for past meetings, it **can** be the actual start time.
-AgendaItem.properties.end.description: The date and time of the end of the AgendaItem. Bei zukünftigen Tagesordnungspunkten ist dies der geplante Zeitpunkt, bei einer stattgefundenen **kann** es der tatsächliche Endzeitpunkt sein.
-Person.description: Jede natürliche Person, die in der parlamentarischen Arbeit tätig und insbesondere Mitglied in einer Gruppierung ([oparl:Organization](#oparl_organization)) ist, wird mit einem Objekt vom Typ `oparl:Person` abgebildet.
-Person.properties.body.description: Körperschaft, zu der die Person gehört.
+AgendaItem.properties.start.description: The date and time of the start of the AgendaItem. For AgendaItems in the future, this is the scheduled time. For past meetings, it **can** be the actual start time.
+AgendaItem.properties.end.description: The date and time of the end of the AgendaItem. For AgendaItems in the future, this is the scheduled time. For past meetings, it **can** be the actual end time.
+Person.Description: Any natural person involved in the parliamentary work, particularly members of groups ([oparl:Organization](#oparl_organization)). The object of the property should be of type `oparl:Person`.
+Person.properties.body.Description: Body to which the Person belongs.
 Person.properties.name.description: Der vollständige Name der Person mit akademischem Grad und dem gebräuchlichen Vornamen, wie er zur Anzeige durch den Client genutzt werden kann.
 Person.properties.familyName.description: Familienname bzw. Nachname.
 Person.properties.givenName.description: Vorname bzw. Taufname.
