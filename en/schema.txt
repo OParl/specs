@@ -29,9 +29,9 @@ Person.properties.lifeSource.description: The source of the information provided
 File.description: Ein Objekt vom Typ `oparl:File` repräsentiert eine Datei, beispielsweise eine PDF-Datei, ein RTF- oder ODF-Dokument, und hält Metadaten zu der Datei sowie URLs zum Zugriff auf  die Datei bereit.\n\nObjekte vom Typ `oparl:File` können unter anderem mit Drucksachen (`oparl:Paper`) oder Sitzungen (`oparl:Meeting`) in Beziehung stehen. Dies wird durch  die Eigenschaft `paper` bzw. `meeting` angezeigt.\n\nMehrere Objekte vom Typ `oparl:File` können mit einander in direkter Beziehung stehen, z.B. wenn sie den selben Inhalt in unterschiedlichen technischen Formaten wiedergeben. Hierfür werden die Eigenschaften `masterFile` bzw. `derivativeFile` eingesetzt. Das sgezeigte Beispiel-Objekt repräsentiert eine PDF-Datei (zu erkennen an der Eigenschaft `mimeType`) und zeigt außerdem über die Eigenschaft  `masterFile` an, von welcher anderen Datei es abgeleitet wurde. Umgekehrt **kann** über die Eigenschaft `derivativeFile` angezeigt werden, welche Ableitungen einer Datei existieren.
 File.properties.name.description: Ein zur Anzeige für Endnutzer bestimmter Name für dieses Objekt. Leerzeichen **dürfen** enthalten sein, Datei-Endungen wie ".pdf" **sollten nicht** enthalten sein.
 File.properties.fileName.description: Dateiname, unter dem die Datei in einem Dateisystem gespeichert werden kann. Beispiel: "einedatei.pdf". Da der Name den kompletten Unicode-Zeichenumfang nutzen kann, **sollten** Clients ggfs. selbst dafür sorgen, diesen beim Speichern in ein Dateisystem den lokalen Erfordernissen anzupassen.
-File.properties.mimeType.description: MIME-Type der Datei ^[vgl. RFC2046: <http://tools.ietf.org/html/rfc2046>].
+File.properties.mimeType.description: MIME-type of the file ^[see [RFC2046: <http://tools.ietf.org/html/rfc2046>].
 File.properties.date.description: Datum, welches als Startpunkt für Fristen u.ä. verwendet ist.
-File.properties.size.description: Größe der Datei in Bytes.
+File.properties.size.Description: Size of the File in bytes.
 File.properties.sha1Checksum.description: [Veraltet] SHA1-Prüfsumme des Dateiinhalts in Hexadezimal-Schreibweise. Sollte nicht mehr verwendet werden, da sha1 als unsicher gilt. Stattdessen sollte `sha512checksum` verwendet werden.
 File.properties.sha512Checksum.description: SHA512-Prüfsumme des Dateiinhalts in Hexadezimal-Schreibweise.
 File.properties.text.description: Reine Text-Wiedergabe des Dateiinhalts, sofern dieser in Textform wiedergegeben werden kann.
@@ -62,12 +62,12 @@ Body.properties.rgs.Description: The twelve-digit regional key.
 Body.properties.equivalent.description: Dient der Angabe zusätzlicher URLs, die dieselbe Körperschaft repräsentieren. Hier können beispielsweise der entsprechende Eintrag der gemeinsamen Normdatei der Deutschen Nationalbibliothek^[Gemeinsame Normdatei <http://www.dnb.de/gnd>], der DBPedia^[DBPedia <http://www.dbpedia.org/>] oder der Wikipedia^[Wikipedia <http://de.wikipedia.org/>] angegeben werden. Body- oder System-Objekte mit anderen OParl-Versionen **dürfen nicht** Teil der Liste sein.
 Body.properties.contactEmail.description: Dient der Angabe einer Kontakt-E-Mail-Adresse. Die Adresse soll die Kontaktaufnahme zu einer für die Körperschaft und idealerweise das parlamentarische Informationssystem zuständigen Stelle ermöglichen. 
 Body.properties.contactName.description: Name oder Bezeichnung der mit `contactEmail` erreichbaren Stelle.
-Body.properties.organization.description: Link zur [Objektliste](#objektlisten) mit allen Gruppierungen der Körperschaft.
-Body.properties.person.description: Link zur [Objektliste](#objektlisten) mit allen Personen der Körperschaft.
-Body.properties.meeting.description: Link zur [Objektliste](#objektlisten) mit allen Sitzungen der Körperschaft.
-Body.properties.paper.description: Link zur [Objektliste](#objektlisten) mit allen Drucksachen der Körperschaft.
-Body.properties.legislativeTerm.description: [Objektliste](#objektlisten) mit den Wahlperioden der Körperschaft.
-Body.properties.classification.description: Art der Körperschaft.
+Body.properties.Organization.Description: Link to the [object list](#objektlisten) with all Organisations of the Body.
+Body.properties.person.Description: Link to the [object list](#objektlisten) with all Persons of the Body.
+Body.properties.meeting.Description: Link to the [object list](#objektlisten) with all Meetings of the Body.
+Body.properties.paper.Description: Link to the [object list](#objektlisten) with all Papers of the body.
+Body.properties.legislativeTerm.description: [object list](#objektlisten) with the electoral terms of the Body.
+Body.properties.classification.Description: Type of Body.
 Body.properties.location.description: Ort, an dem die Körperschaft beheimatet ist.
 Consultation.description: Der Objekttyp `oparl:Consultation` dient dazu, die Beratung einer Drucksache ([`oparl:Paper`](#oparl_paper)) in einer Sitzung abzubilden. Dabei ist es nicht entscheidend, ob diese Beratung in der Vergangenheit stattgefunden hat oder diese für die Zukunft geplant ist.\n\nDie Gesamtheit aller Objekte des Typs `oparl:Consultation` zu einer bestimmten Drucksache bildet das ab, was in der Praxis als "Beratungsfolge" der Drucksache bezeichnet wird.
 Consultation.properties.paper.description: Referenz auf das Paper, welche nur dann ausgegeben werden muss, wenn das Consultation-Objekt einzeln abgerufen wird, d.h. nicht Teil einer internen Ausgabe ist.
