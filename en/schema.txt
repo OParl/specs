@@ -12,12 +12,12 @@ AgendaItem.properties.start.description: The date and time of the start of the A
 AgendaItem.properties.end.description: The date and time of the end of the AgendaItem. For AgendaItems in the future, this is the scheduled time. For past meetings, it **can** be the actual end time.
 Person.Description: Any natural person involved in the parliamentary work, particularly members of groups ([oparl:Organization](#oparl_organization)). The object of the property should be of type `oparl:Person`.
 Person.properties.body.Description: Body to which the Person belongs.
-Person.properties.name.description: Der vollständige Name der Person mit akademischem Grad und dem gebräuchlichen Vornamen, wie er zur Anzeige durch den Client genutzt werden kann.
-Person.properties.familyName.description: Familienname bzw. Nachname.
-Person.properties.givenName.description: Vorname bzw. Taufname.
-Person.properties.formOfAddress.description: Anrede.
-Person.properties.affix.description: Namenszusatz (z.B. `jun.` oder `MdL.`)
-Person.properties.title.description: Akademische Titel
+Person.properties.name.Description: The full name of the Person including post-nominal letters and forenames, as it should be displayed by client applications.
+Person.properties.familyName.description: the Person's surname.  
+Person.properties.givenName.description: the Person's forename.  
+Person.properties.formOfAddress.description: the Person's salutation.
+Person.properties.affix.Description: Prefix (e.g. `jun.` oder `MdL.`)
+Person.properties.title.Description: Academic title
 Person.properties.gender.description: Geschlecht. Empfohlene Werte sind `female`, `male` und `other`. Für den Fall, dass das Geschlecht der Person unbekannt ist, **sollte** die Eigenschaft nicht ausgegeben werden.
 Person.properties.phone.description: Telefonnummern der Person.
 Person.properties.email.description: E-Mail-Adressen der Person.
