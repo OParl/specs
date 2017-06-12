@@ -8,24 +8,24 @@ AgendaItem.properties.result.description: A category describing the meeting's ou
 AgendaItem.properties.resolutionText.description: If a decision was taken in this AgendaItem, a text description can be specified here. This is especially relevant in cases where the decision ( e.g.  through amendment) deviates from the drafted resolution.
 AgendaItem.properties.resolutionFile.description: If a decision was taken in this AgendaItem, a file can be specified here. This is especially relevant in cases where the decision ( e.g.  through amendment) deviates from the drafted resolution.
 AgendaItem.properties.auxiliaryFile.description: More files attached to the AgendaItem.
-AgendaItem.properties.start.description: The date and time of the start of the AgendaItem. For AgendaItem in the future, this is the scheduled time for past meetings, it **can** be the actual start time.
-AgendaItem.properties.end.description: The date and time of the end of the AgendaItem. Bei zukünftigen Tagesordnungspunkten ist dies der geplante Zeitpunkt, bei einer stattgefundenen **kann** es der tatsächliche Endzeitpunkt sein.
-Person.description: Jede natürliche Person, die in der parlamentarischen Arbeit tätig und insbesondere Mitglied in einer Gruppierung ([oparl:Organization](#oparl_organization)) ist, wird mit einem Objekt vom Typ `oparl:Person` abgebildet.
-Person.properties.body.description: Körperschaft, zu der die Person gehört.
-Person.properties.name.description: Der vollständige Name der Person mit akademischem Grad und dem gebräuchlichen Vornamen, wie er zur Anzeige durch den Client genutzt werden kann.
-Person.properties.familyName.description: Familienname bzw. Nachname.
-Person.properties.givenName.description: Vorname bzw. Taufname.
-Person.properties.formOfAddress.description: Anrede.
-Person.properties.affix.description: Namenszusatz (z.B. `jun.` oder `MdL.`)
-Person.properties.title.description: Akademische Titel
-Person.properties.gender.description: Geschlecht. Empfohlene Werte sind `female`, `male` und `other`. Für den Fall, dass das Geschlecht der Person unbekannt ist, **sollte** die Eigenschaft nicht ausgegeben werden.
-Person.properties.phone.description: Telefonnummern der Person.
-Person.properties.email.description: E-Mail-Adressen der Person.
-Person.properties.location.description: Referenz der Kontakt-Anschrift der Person.
-Person.properties.status.description: Status, d.h. Rollen in der Kommune.
-Person.properties.membership.description: Mitgliedschaften der Person in Gruppierungen, z. B. Gremien und Fraktionen. Es **sollen** sowohl aktuelle als auch vergangene Mitgliedschaften angegeben werden
-Person.properties.life.description: Kurzer Informationstext zur Person. Eine Länge von weniger als 300 Zeichen ist **empfohlen**
-Person.properties.lifeSource.description: Angabe der Quelle, aus der die Informationen für `life` stammen. Bei Angabe von `life` ist diese Eigenschaft **empfohlen**
+AgendaItem.properties.start.description: The date and time of the start of the AgendaItem. For AgendaItems in the future, this is the scheduled time. For past meetings, it **can** be the actual start time.
+AgendaItem.properties.end.description: The date and time of the end of the AgendaItem. For AgendaItems in the future, this is the scheduled time. For past meetings, it **can** be the actual end time.
+Person.Description: Any natural person involved in the parliamentary work, particularly members of groups ([oparl:Organization](#oparl_organization)). The object of the property should be of type `oparl:Person`.
+Person.properties.body.Description: Body to which the Person belongs.
+Person.properties.name.Description: The full name of the Person including post-nominal letters and forenames, as it should be displayed by client applications.
+Person.properties.familyName.description: the Person's surname.  
+Person.properties.givenName.description: the Person's forename.  
+Person.properties.formOfAddress.description: the Person's salutation.
+Person.properties.affix.Description: Suffix (e.g. `Jun` or `MdL.`)
+Person.properties.title.Description: Academic title
+Person.properties.gender.Description: Gender. Recommended values are `female`, `male` and `other`. In the event that the sex of the person is unknown, the property **should** not be issued.
+Person.properties.phone.Description: Telephone numbers of the Person.
+Person.properties.email.Description: E-Mail address of the Person.
+Person.properties.location.Description: Reference to the contact address of the Person.
+Person.properties.status.Description: Status, i.e. roles in the Municipality.
+Person.properties.membership.Description: Membership of the person in groupings, e.g. committees and political groups. It **should** specify current as well as past memberships.
+Person.properties.life.Description: A short description of the person. It is **recommended** that this be shorter than 300 characters.
+Person.properties.lifeSource.description: The source of the information provided in the `life` property. This property **recommended** only when a `life` attribute is specified.
 File.description: Ein Objekt vom Typ `oparl:File` repräsentiert eine Datei, beispielsweise eine PDF-Datei, ein RTF- oder ODF-Dokument, und hält Metadaten zu der Datei sowie URLs zum Zugriff auf  die Datei bereit.\n\nObjekte vom Typ `oparl:File` können unter anderem mit Drucksachen (`oparl:Paper`) oder Sitzungen (`oparl:Meeting`) in Beziehung stehen. Dies wird durch  die Eigenschaft `paper` bzw. `meeting` angezeigt.\n\nMehrere Objekte vom Typ `oparl:File` können mit einander in direkter Beziehung stehen, z.B. wenn sie den selben Inhalt in unterschiedlichen technischen Formaten wiedergeben. Hierfür werden die Eigenschaften `masterFile` bzw. `derivativeFile` eingesetzt. Das sgezeigte Beispiel-Objekt repräsentiert eine PDF-Datei (zu erkennen an der Eigenschaft `mimeType`) und zeigt außerdem über die Eigenschaft  `masterFile` an, von welcher anderen Datei es abgeleitet wurde. Umgekehrt **kann** über die Eigenschaft `derivativeFile` angezeigt werden, welche Ableitungen einer Datei existieren.
 File.properties.name.description: Ein zur Anzeige für Endnutzer bestimmter Name für dieses Objekt. Leerzeichen **dürfen** enthalten sein, Datei-Endungen wie ".pdf" **sollten nicht** enthalten sein.
 File.properties.fileName.description: Dateiname, unter dem die Datei in einem Dateisystem gespeichert werden kann. Beispiel: "einedatei.pdf". Da der Name den kompletten Unicode-Zeichenumfang nutzen kann, **sollten** Clients ggfs. selbst dafür sorgen, diesen beim Speichern in ein Dateisystem den lokalen Erfordernissen anzupassen.
@@ -50,15 +50,15 @@ LegislativeTerm.properties.name.description: Nutzerfreundliche Bezeichnung der W
 LegislativeTerm.properties.startDate.description: Der erste Tag der Wahlperiode.
 LegislativeTerm.properties.endDate.description: Der letzte Tag der Wahlperiode.
 Body.description: Der Objekttyp oparl:Body dient dazu, eine Körperschaft zu repräsentieren. Eine Körperschaft ist in den meisten Fällen eine Gemeinde, eine Stadt oder ein Landkreis.\n\nIn der Regel sind auf einem OParl-Server Daten von genau einer Körperschaft gespeichert und es wird daher auch nur ein Body-Objekt ausgegeben. Sind auf dem Server jedoch Daten von mehreren Körperschaften gespeichert, **muss** für jede Körperschaft ein eigenes Body-Objekt ausgegeben werden.
-Body.properties.system.description: System, zu dem dieses Objekt gehört.
-Body.properties.shortName.description: Kurzer Name der Körperschaft.
-Body.properties.name.description: Der offizielle lange Name der Körperschaft.
-Body.properties.website.description: Allgemeine Website der Körperschaft.
+Body.properties.System.Description: System to which this object belongs.
+Body.properties.shortName.description: Short name of the Body.
+Body.properties.name.Description: The official (longer) name of the Body.
+Body.properties.website.Description: General website of the Body.
 Body.properties.license.description: Lizenz, unter der die Daten dieser Körperschaft stehen, sofern nicht am einzelnen Objekt anders angegeben. Siehe [`license`](#eigenschaft_license).
 Body.properties.licenseValidSince.description: Zeitpunkt, seit dem die unter `license` angegebene Lizenz gilt. _Vorsicht bei Änderungen der Lizenz die zu restriktiveren Bedingungen führen!_
 Body.properties.oparlSince.description: Zeitpunkt, ab dem OParl für dieses Body bereitgestellt wurde. Dies hilft, um die Datenqualität einzuschätzen, denn erst ab der Einrichtung für OParl kann sichergestellt werden, dass sämtliche Werte korrekt in der Original-Quelle vorliegen.
 Body.properties.ags.description: Der achtstellige Amtliche Gemeindeschlüssel^[Amtliche Gemeindeschlüssel können im [Gemeindeverzeichnis (GV-ISys) des Statistischen Bundesamtes](https://www.destatis.de/DE/ZahlenFakten/LaenderRegionen/Regionales/Gemeindeverzeichnis/Gemeindeverzeichnis.html) eingesehen werden].
-Body.properties.rgs.description: Der zwölfstellige Regionalschlüssel.
+Body.properties.rgs.Description: The twelve-digit regional key.
 Body.properties.equivalent.description: Dient der Angabe zusätzlicher URLs, die dieselbe Körperschaft repräsentieren. Hier können beispielsweise der entsprechende Eintrag der gemeinsamen Normdatei der Deutschen Nationalbibliothek^[Gemeinsame Normdatei <http://www.dnb.de/gnd>], der DBPedia^[DBPedia <http://www.dbpedia.org/>] oder der Wikipedia^[Wikipedia <http://de.wikipedia.org/>] angegeben werden. Body- oder System-Objekte mit anderen OParl-Versionen **dürfen nicht** Teil der Liste sein.
 Body.properties.contactEmail.description: Dient der Angabe einer Kontakt-E-Mail-Adresse. Die Adresse soll die Kontaktaufnahme zu einer für die Körperschaft und idealerweise das parlamentarische Informationssystem zuständigen Stelle ermöglichen. 
 Body.properties.contactName.description: Name oder Bezeichnung der mit `contactEmail` erreichbaren Stelle.
@@ -77,11 +77,11 @@ Consultation.properties.organization.description: Gremium, in dem die Drucksache
 Consultation.properties.authoritative.description: Drückt aus, ob bei dieser Beratung ein Beschluss zu der Drucksache gefasst wird oder wurde (`true`) oder nicht (`false`).
 Consultation.properties.role.description: Rolle oder Funktion der Beratung. Zum Beispiel Anhörung, Entscheidung, Kenntnisnahme, Vorberatung usw.
 Location.description: Dieser Objekttyp dient dazu, einen Ortsbezug formal abzubilden. Ortsangaben können sowohl aus Textinformationen bestehen (beispielsweise dem Namen einer Straße/eines Platzes oder eine genaue Adresse) als auch aus Geodaten. Ortsangaben sind auch nicht auf einzelne Positionen beschränkt, sondern können eine Vielzahl von Positionen, Flächen, Strecken etc. abdecken.
-Location.properties.description.description: Textuelle Beschreibung eines Orts, z. B. in Form einer Adresse.
+Location.properties.Description.Description: Textual description of a location, e.g.  in the form of an address.
 Location.properties.geojson.description: Geodaten-Repräsentation des Orts. Der Wert dieser Eigenschaft **muss** der Spezifikation von GeoJSON entsprechen, d.h. es **muss** ein vollständiges `Feature`-Objekt ausgegeben werden.
-Location.properties.streetAddress.description: Straße und Hausnummer der Anschrift.
-Location.properties.room.description: Raumangabe der Anschrift
-Location.properties.postalCode.description: Postleitzahl der Anschrift.
+Location.properties.streetAddress.description: Street and house number of the address.
+Location.properties.room.Description: Room of address.
+Location.properties.postalCode.description: postal code of the address.
 Location.properties.subLocality.description: Untergeordnete Ortsangabe der Anschrift, z.B. Stadtbezirk, Ortsteil oder Dorf.
 Location.properties.locality.description: Ortsangabe der Anschrift.
 Location.properties.bodies.description: Rückreferenzen auf Body-Objekte. Wird nur dann ausgegeben, wenn das Location-Objekt nicht als eingebettetes Objekt aufgerufen wird.
