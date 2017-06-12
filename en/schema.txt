@@ -5,11 +5,11 @@ AgendaItem.properties.name.description: The theme of the AgendaItem.
 AgendaItem.properties.public.description: Indicates whether the AgendaItem should be/ was treated as open to the public. Should be a boolean value (`true` or `false`).
 AgendaItem.properties.consultation.description: Consultation that is assigned to this AgendaItem.
 AgendaItem.properties.result.description: A category describing the meeting's outcome such as, "Change not agreed" or "Change agreed".
-AgendaItem.properties.resolutionText.description: Falls in diesem Tagesordnungspunkt ein Beschluss gefasst wurde, kann hier ein Text angegeben werden. Das ist besonders dann in der Praxis relevant, wenn der gefasste Beschluss (z. B. durch Änderungsantrag) von der Beschlussvorlage abweicht.
-AgendaItem.properties.resolutionFile.description: Falls in diesem Tagesordnungspunkt ein Beschluss gefasst wurde, kann hier eine Datei angegeben werden. Das ist besonders dann in der Praxis relevant, wenn der gefasste Beschluss (z. B. durch Änderungsantrag) von der Beschlussvorlage abweicht.
-AgendaItem.properties.auxiliaryFile.description: Weitere Dateianhänge zum Tagesordnungspunkt.
-AgendaItem.properties.start.description: Datum und Uhrzeit des Anfangszeitpunkts des Tagesordnungspunktes. Bei zukünftigen Tagesordnungspunkten ist dies der geplante Zeitpunkt, bei einem stattgefundenen **kann** es der tatsächliche Startzeitpunkt sein.
-AgendaItem.properties.end.description: Endzeitpunkt des Tagesordnungspunktes als Datum/Uhrzeit. Bei zukünftigen Tagesordnungspunkten ist dies der geplante Zeitpunkt, bei einer stattgefundenen **kann** es der tatsächliche Endzeitpunkt sein.
+AgendaItem.properties.resolutionText.description: If a decision was taken in this AgendaItem, a text description can be specified here. This is especially relevant in cases where the decision ( e.g.  through amendment) deviates from the drafted resolution.
+AgendaItem.properties.resolutionFile.description: If a decision was taken in this AgendaItem, a file can be specified here. This is especially relevant in cases where the decision ( e.g.  through amendment) deviates from the drafted resolution.
+AgendaItem.properties.auxiliaryFile.description: More files attached to the AgendaItem.
+AgendaItem.properties.start.description: The date and time of the start of the AgendaItem. For AgendaItem in the future, this is the scheduled time for past meetings, it **can** be the actual start time.
+AgendaItem.properties.end.description: The date and time of the end of the AgendaItem. Bei zukünftigen Tagesordnungspunkten ist dies der geplante Zeitpunkt, bei einer stattgefundenen **kann** es der tatsächliche Endzeitpunkt sein.
 Person.description: Jede natürliche Person, die in der parlamentarischen Arbeit tätig und insbesondere Mitglied in einer Gruppierung ([oparl:Organization](#oparl_organization)) ist, wird mit einem Objekt vom Typ `oparl:Person` abgebildet.
 Person.properties.body.description: Körperschaft, zu der die Person gehört.
 Person.properties.name.description: Der vollständige Name der Person mit akademischem Grad und dem gebräuchlichen Vornamen, wie er zur Anzeige durch den Client genutzt werden kann.
