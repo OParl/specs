@@ -1,10 +1,10 @@
-AgendaItem.description: Agenda Items are the components of Meetings (`oparl:Meeting`). Each Agenda Item is devoted to a certain theme and usually includes the consultation of printed documents.\n\n Those document(s) `oparl:Paper`, are attributes of the `oparl:Consultation`, that can be referenced via the Agenda Items 'consultation' property.
+AgendaItem.description: AgendaItems are the components of Meetings (`oparl:Meeting`). Each AgendaItem is devoted to a certain theme and usually includes the consultation of printed documents.\n\n Those document(s) `oparl:Paper`, are attributes of the `oparl:Consultation`, that can be referenced via the AgendaItem's 'consultation' property.
 AgendaItem.properties.meeting.description: A reference back to the Meeting, which must be issued only when the Agenda Item object is present alone, i.e. not as part of an internal output.
-AgendaItem.properties.number.description: Sequence number of the Agenda Item. Any character string is permitted,  e.g. "10.", "10.1", "C", "c)"  etc. Die Reihenfolge wird nicht dadurch, sondern durch die Reihenfolge der TOPs im `agendaItem`-Attribut von `oparl:Meeting` festgelegt, **sollte** allerdings zu dieser identisch sein.
-AgendaItem.properties.name.description: Das Thema des Tagesordnungspunktes.
-AgendaItem.properties.public.description: Kennzeichnet, ob der Tagesordnungspunkt zur Behandlung in öffentlicher Sitzung vorgesehen ist/war. Es wird ein Wahrheitswert (`true` oder `false`) erwartet.
-AgendaItem.properties.consultation.description: Beratung, die diesem Tagesordnungspunkt zugewiesen ist.
-AgendaItem.properties.result.description: Kategorische Information darüber, welches Ergebnis die Beratung des Tagesordnungspunktes erbracht hat, in der Bedeutung etwa "Unverändert beschlossen" oder "Geändert beschlossen".
+AgendaItem.properties.number.description: Sequence number of the AgendaItem. Any character string is permitted,  e.g. "10.", "10.1", "C", "c)"  etc. The agenda items are not sorted with this string, but instead according to the order in which they appear in the `agendaItem`-attribute of the`oparl:Meeting`. They **should**, however, be identical to this.
+AgendaItem.properties.name.description: The theme of the AgendaItem.
+AgendaItem.properties.public.description: Indicates whether the AgendaItem should be/ was treated as open to the public. Should be a boolean value (`true` or `false`).
+AgendaItem.properties.consultation.description: Consultation that is assigned to this AgendaItem.
+AgendaItem.properties.result.description: A category describing the meeting's outcome such as, "Change not agreed" or "Change agreed".
 AgendaItem.properties.resolutionText.description: Falls in diesem Tagesordnungspunkt ein Beschluss gefasst wurde, kann hier ein Text angegeben werden. Das ist besonders dann in der Praxis relevant, wenn der gefasste Beschluss (z. B. durch Änderungsantrag) von der Beschlussvorlage abweicht.
 AgendaItem.properties.resolutionFile.description: Falls in diesem Tagesordnungspunkt ein Beschluss gefasst wurde, kann hier eine Datei angegeben werden. Das ist besonders dann in der Praxis relevant, wenn der gefasste Beschluss (z. B. durch Änderungsantrag) von der Beschlussvorlage abweicht.
 AgendaItem.properties.auxiliaryFile.description: Weitere Dateianhänge zum Tagesordnungspunkt.
