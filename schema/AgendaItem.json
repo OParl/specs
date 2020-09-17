@@ -1,4 +1,6 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://schema.oparl.org/1.1/AgendaItem",
     "title": "AgendaItem",
     "description": "{{ AgendaItem.description }}",
     "type": "object",
@@ -14,7 +16,7 @@
         },
         "type": {
             "type": "string",
-            "pattern": "^https\\:\\/\\/schema\\.oparl\\.org\\/1\\.1\\/AgendaItem$"
+            "const": "https://schema.oparl.org/1.1/AgendaItem"
         },
         "meeting": {
             "description": "{{ AgendaItem.properties.meeting.description }}",
@@ -56,15 +58,13 @@
         },
         "resolutionFile": {
             "description": "{{ AgendaItem.properties.resolutionFile.description }}",
-            "type": "object",
-            "schema": "File.json"
+            "$ref": "File.json"
         },
         "auxiliaryFile": {
             "description": "{{ AgendaItem.properties.auxiliaryFile.description }}",
             "type": "array",
             "items": {
-                "type": "object",
-                "schema": "File.json"
+                "$ref": "File.json"
             }
         },
         "start": {

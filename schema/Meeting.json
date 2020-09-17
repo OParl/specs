@@ -1,4 +1,6 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://schema.oparl.org/1.1/Meeting",
     "title": "Meeting",
     "description": "{{ Meeting.description }}",
     "type": "object",
@@ -13,7 +15,7 @@
         },
         "type": {
             "type": "string",
-            "pattern": "^https\\:\\/\\/schema\\.oparl\\.org\\/1\\.1\\/Meeting$"
+            "const": "https://schema.oparl.org/1.1/Meeting"
         },
         "name": {
             "description": "{{ Meeting.properties.name.description }}",
@@ -39,8 +41,7 @@
         },
         "location": {
             "description": "{{ Meeting.properties.location.description }}",
-            "type": "object",
-            "schema": "Location.json"
+            "$ref": "Location.json"
         },
         "organization": {
             "description": "{{ Meeting.properties.organization.description }}",
@@ -65,33 +66,28 @@
         },
         "invitation": {
             "description": "{{ Meeting.properties.invitation.description }}",
-            "type": "object",
-            "schema": "File.json"
+            "$ref": "File.json"
         },
         "resultsProtocol": {
             "description": "{{ Meeting.properties.resultsProtocol.description }}",
-            "type": "object",
-            "schema": "File.json"
+            "$ref": "File.json"
         },
         "verbatimProtocol": {
             "description": "{{ Meeting.properties.verbatimProtocol.description }}",
-            "type": "object",
-            "schema": "File.json"
+            "$ref": "File.json"
         },
         "auxiliaryFile": {
             "description": "{{ Meeting.properties.auxiliaryFile.description }}",
             "type": "array",
             "items": {
-                "type": "object",
-                "schema": "File.json"
+                "$ref": "File.json"
             }
         },
         "agendaItem": {
             "description": "{{ Meeting.properties.agendaItem.description }}",
             "type": "array",
             "items": {
-                "type": "object",
-                "schema": "AgendaItem.json"
+                "$ref": "AgendaItem.json"
             }
         },
         "license": {

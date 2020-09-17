@@ -1,4 +1,6 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://schema.oparl.org/1.1/Person",
     "title": "Person",
     "description": "{{ Person.description }}",
     "type": "object",
@@ -13,7 +15,7 @@
         },
         "type": {
             "type": "string",
-            "pattern": "^https\\:\\/\\/schema\\.oparl\\.org\\/1\\.1\\/Person$"
+            "const": "https://schema.oparl.org/1.1/Person"
         },
         "body": {
             "description": "{{ Person.properties.body.description }}",
@@ -78,8 +80,7 @@
         },
         "locationObject": {
             "description": "{{ Person.properties.locationObject.description }}",
-            "type": "object",
-            "schema": "Location.json"
+            "$ref": "Location.json"
         },
         "status": {
             "description": "{{ Person.properties.status.description }}",
@@ -92,14 +93,12 @@
             "description": "{{ Person.properties.membership.description }}",
             "type": "array",
             "items": {
-                "type": "object",
-                "schema": "Membership.json"
+                "$ref": "Membership.json"
             }
         },
         "image": {
             "description": "{{ Person.properties.image.description }}",
-            "type": "object",
-            "schema": "File.json"
+            "$ref": "File.json"
         },
         "life": {
             "description": "{{ Person.properties.life.description }}",
